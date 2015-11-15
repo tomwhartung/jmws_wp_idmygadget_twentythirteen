@@ -20,6 +20,10 @@ wp-content/wp-cache-config.php
 #  I switch between netbeans, eclipse, and vi
 #
 /nbproject/
+
+/.buildpath
 /.project
+/.settings/
+
 *.swp
 
