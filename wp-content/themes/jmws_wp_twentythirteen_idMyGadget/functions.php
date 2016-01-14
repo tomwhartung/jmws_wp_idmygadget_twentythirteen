@@ -550,3 +550,186 @@ function twentythirteen_customize_preview_js() {
 	wp_enqueue_script( 'twentythirteen-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
 }
 add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
+
+
+//
+// ---------------------------------------------------
+// Begin changes added for integration with IdMyGadget
+// ---------------------------------------------------
+//
+/**
+ * Add in the scripts and stylesheets we need for integration with IdMyGadget
+ */
+function enqueue_idmygadget_css()
+{
+	$css_file = get_template_directory_uri() . "/idMyGadget/idMyGadget.css";
+	wp_enqueue_style( 'idMyGadget-css', $css_file );
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_idmygadget_css' );
+
+/**
+ * Checks for a valid idMyGadget object; if one is not present:
+ *   Diagnose the problem,
+ *   Create a "no detection" object to keep us from whitescreening, and
+ *   Set an appropriate error message in the object
+ */
+function check_idMyGadget_install()
+{
+	global $jmwsIdMyGadget;
+	global $all_plugins;
+	global $jmws_idMyGadget_for_wordpress_is_installed;
+	global $jmws_idMyGadget_for_wordpress_is_active;
+	$jmws_idMyGadget_for_wordpress_is_installed= TRUE;
+	$jmws_idMyGadget_for_wordpress_is_active = TRUE;
+
+	if ( isset($jmwsIdMyGadget) )
+	{
+		if ( $jmwsIdMyGadget->isInstalled() )
+		{
+			unset( $jmwsIdMyGadget->errorMessage );
+		}
+		else
+		{
+			$linkToReadmeOnGithub =
+			'<a href="' . $jmwsIdMyGadget->getLinkToReadme() . '" class="idmygadget-error" target="_blank">' .
+			'the appropriate README.md file on github.</a>';
+			$jmwsIdMyGadget->errorMessage = IDMYGADGET_DETECTOR_NOT_INSTALLED_OPENING .
+			$linkToReadmeOnGithub . IDMYGADGET_DETECTOR_NOT_INSTALLED_CLOSING;
+		}
+	}
+	else
+	{
+		require_once 'idMyGadget/JmwsIdMyGadgetMissingPlugin.php';
+		$jmwsIdMyGadget = new JmwsIdMyGadgetMissingPlugin();
+		$rooted_plugin_file_name =  WP_PLUGIN_DIR . '/' . JmwsIdMyGadgetMissingPlugin::IDMYGADGET_PLUGIN_FILE;
+		$jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
+		if ( file_exists($rooted_plugin_file_name) )  // it's installed but probably not active
+		{
+			if ( ! function_exists( 'get_plugins' ) )
+			{
+				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+			}
+			$all_plugins = get_plugins();
+			if ( ! is_plugin_active(JmwsIdMyGadgetMissingPlugin::IDMYGADGET_PLUGIN_FILE) )
+			{
+				$jmws_idMyGadget_for_wordpress_is_active = FALSE;
+				$jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;
+			}
+		}
+		else
+		{
+			$jmws_idMyGadget_for_wordpress_is_active = FALSE;
+			$jmws_idMyGadget_for_wordpress_is_installed = FALSE;
+			$jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_INSTALLED;
+		}
+	}
+}
+/**
+ * Use the $logoTitleDescription to generate the html for the header
+ */
+function getHeaderHtml()
+{
+	global $jmwsIdMyGadget;
+	$logoTitleDescription = '';
+
+	if ( $jmwsIdMyGadget->isInstalled() && $jmwsIdMyGadget->isEnabled() )
+	{
+		$logoTitleDescription = $jmwsIdMyGadget->getLogoTitleDescriptionHtml();
+	}
+	else
+	{
+		$logoTitleDescription = getLogoTitleDescriptionHtml();
+	}
+
+	$headerHtml  = '';
+	$headerHtml .= '<header id="masthead" class="site-header" role="banner" ';
+	$headerHtml .= $jmwsIdMyGadget->jqmDataRole['header'] . ' ';
+	$headerHtml .= $jmwsIdMyGadget->jqmDataThemeAttribute . '>';
+	$headerHtml .= '<div class="site-branding">';
+	$headerHtml .= $logoTitleDescription;
+	$headerHtml .= '</div><!-- .site-branding -->';
+	$headerHtml .= '</header><!-- .site-header -->';
+	return $headerHtml;
+}
+/**
+ * If the idMyGadget module is not available we will use this,
+ * which is the original twentythirteen code (as of Sept. 2015).
+ */
+function getLogoTitleDescriptionHtml()
+{
+	$logoTitleDescription = '';
+	if ( is_front_page() && is_home() )
+	{
+		$logoTitleDescription = '<h1 class="site-title">Exploding!' .
+				'<a href="' . esc_url( home_url('/') ) . '" rel="home">' . $site_name . '</a></h1>';
+	}
+	else
+	{
+		$logoTitleDescription = '<p class="site-title">' .
+				'<a href="' . esc_url( home_url('/') ) . '" rel="home">' . $site_name . '</a></p>';
+	}
+	$description = get_bloginfo( 'description', 'display' );
+	if ( $description || is_customize_preview() )
+	{
+		$logoTitleDescription .= '<p class="site-description">' . $description . '</p>';
+	}
+	// $logoTitleDescription .= '<button class="secondary-toggle">' . _e( 'Menu and widgets', 'twentythirteen' ) . '</button>';
+	$logoTitleDescription .= '<button class="secondary-toggle">Menu and widgets</button>';
+
+	return $logoTitleDescription;
+}
+
+/**
+ * Initialize:
+ * 1) Determine whether the phone nav should be part of the page or the sidebar
+ * 2) ???
+ * 3) Profit!
+ */
+function twentythirteen_idMyGadget_wp()
+{
+	global $idmg_nav_in_page_or_sidebar_index;
+	global $idmg_nav_in_page_or_sidebar_string;
+	global $jmwsIdMyGadget;
+
+	if( isset($jmwsIdMyGadget) )
+	{
+		$jmwsIdMyGadget->phoneHeaderNavIn2015Page = FALSE;
+		$jmwsIdMyGadget->phoneHeaderNavIn2015Sidebar = FALSE;
+		$jmwsIdMyGadget->phoneFooterNavIn2015Page = FALSE;
+		$jmwsIdMyGadget->phoneFooterNavIn2015Sidebar = FALSE;
+		if( $jmwsIdMyGadget->phoneHeaderNavThisDevice || $jmwsIdMyGadget->phoneFooterNavThisDevice )
+		{
+			if ( $jmwsIdMyGadget->isPhone() )
+			{
+				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_phones' );
+			}
+			else if ( $jmwsIdMyGadget->isTablet() )
+			{
+				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_tablets' );
+			}
+			else
+			{
+				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_desktops' );
+			}
+			$idmg_nav_in_page_or_sidebar_string =
+			JmwsIdMyGadgetWordpress::$pageOrSidebar2015Options[$idmg_nav_in_page_or_sidebar_index];
+			if( $jmwsIdMyGadget->phoneHeaderNavThisDevice && has_nav_menu('phone-header-nav') )
+			{
+				$jmwsIdMyGadget->phoneHeaderNavIn2015Page =
+				$idmg_nav_in_page_or_sidebar_string == 'Page' ? TRUE : FALSE;
+				$jmwsIdMyGadget->phoneHeaderNavIn2015Sidebar =
+				$idmg_nav_in_page_or_sidebar_string == 'Sidebar' ? TRUE : FALSE;
+			}
+			if( $jmwsIdMyGadget->phoneFooterNavThisDevice && has_nav_menu('phone-footer-nav') )
+			{
+				$jmwsIdMyGadget->phoneFooterNavIn2015Page =
+				$idmg_nav_in_page_or_sidebar_string == 'Page' ? TRUE : FALSE;
+				$jmwsIdMyGadget->phoneFooterNavIn2015Sidebar =
+				$idmg_nav_in_page_or_sidebar_string == 'Sidebar' ? TRUE : FALSE;
+			}
+		}
+	}
+}
+add_action( 'wp', 'twentythirteen_idMyGadget_wp' );
+
