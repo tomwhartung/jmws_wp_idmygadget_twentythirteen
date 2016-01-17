@@ -28,6 +28,18 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<?php
+		//
+		// check_idMyGadget_install:
+		//   If the device detection object has NOT been created,
+		//     Create an object that can keep the app from whitescreening with a null pointer etc. and
+		//     Display an appropriate error message (markup for that is at the end of this file)
+		// If we do have the object,
+		//   Call its fcn to get the html we need for the header
+		//
+		global $jmwsIdMyGadget;
+		check_idMyGadget_install();
+	?>
 </head>
 
 <body <?php body_class(); ?>>
