@@ -61,3 +61,6 @@
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">
+			<div class="debug">
+				<?php print $jmwsIdMyGadget->getSanityCheckString(); ?>
+			</div> <!-- .debug -->
