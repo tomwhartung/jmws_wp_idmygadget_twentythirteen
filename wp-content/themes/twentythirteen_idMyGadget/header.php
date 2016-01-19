@@ -39,6 +39,8 @@
 		//
 		global $jmwsIdMyGadget;
 		check_idMyGadget_install();
+		$site_name = get_bloginfo('name' );
+		$header_html = getHeaderHtml();
 	?>
 </head>
 
