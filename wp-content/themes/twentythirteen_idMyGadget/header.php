@@ -63,6 +63,12 @@
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">
+			<?php
+				if (isset($jmwsIdMyGadget->errorMessage) )
+				{
+					echo $jmwsIdMyGadget->errorMessage;
+				}
+			?>
 			<div class="debug">
 				<?php print $jmwsIdMyGadget->getSanityCheckString(); ?>
 			</div> <!-- .debug -->
