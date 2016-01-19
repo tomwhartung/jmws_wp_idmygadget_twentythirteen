@@ -9,14 +9,14 @@
 
 class JmwsIdMyGadgetTwentyThirteen
 {
-	public __construct()
+	public function __construct()
 	{
 	}
 
 	/**
 	 * Use the $logoTitleDescription to generate the html for the header
 	 */
-	function getHeaderHtml()
+	public function getHeaderHtml()
 	{
 		global $jmwsIdMyGadget;
 		$logoTitleDescription = '';
@@ -44,7 +44,7 @@ class JmwsIdMyGadgetTwentyThirteen
 	 * If the idMyGadget module is not available we will use this,
 	 * which is the original twentythirteen code (as of Sept. 2015).
 	 */
-	function getLogoTitleDescriptionHtml()
+	public function getLogoTitleDescriptionHtml()
 	{
 		$logoTitleDescription = '';
 		if ( is_front_page() && is_home() )
@@ -68,4 +68,3 @@ class JmwsIdMyGadgetTwentyThirteen
 		return $logoTitleDescription;
 	}
 }
-
