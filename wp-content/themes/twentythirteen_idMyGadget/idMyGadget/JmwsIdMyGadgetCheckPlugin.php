@@ -45,7 +45,7 @@ class JmwsIdMyGadgetCheckPlugin
 		}
 		else
 		{
-			require_once 'idMyGadget/JmwsIdMyGadgetMissingPlugin.php';
+			require_once 'JmwsIdMyGadgetMissingPlugin.php';
 			$jmwsIdMyGadget = new JmwsIdMyGadgetMissingPlugin();
 			$rooted_plugin_file_name =  WP_PLUGIN_DIR . '/' . JmwsIdMyGadgetMissingPlugin::IDMYGADGET_PLUGIN_FILE;
 			$jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
