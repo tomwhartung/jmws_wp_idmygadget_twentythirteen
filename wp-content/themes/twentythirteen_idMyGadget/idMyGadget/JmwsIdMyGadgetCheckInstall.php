@@ -9,7 +9,7 @@
 
 class JmwsIdMyGadgetCheckInstall
 {
-	public __construct()
+	public function __construct()
 	{
 	}
 
@@ -19,7 +19,7 @@ class JmwsIdMyGadgetCheckInstall
 	 *   Create a "no detection" object to keep us from whitescreening, and
 	 *   Set an appropriate error message in the object
 	 */
-	public function check_idMyGadget_install()
+	public function checkPlugin()
 	{
 		global $jmwsIdMyGadget;
 		global $all_plugins;
