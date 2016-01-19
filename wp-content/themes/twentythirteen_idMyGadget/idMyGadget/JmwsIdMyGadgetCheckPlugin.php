@@ -7,7 +7,7 @@
  * @since Twenty Thirteen IdMyGadget 1.0
  */
 
-class JmwsIdMyGadgetCheckInstall
+class JmwsIdMyGadgetCheckPlugin
 {
 	public function __construct()
 	{
