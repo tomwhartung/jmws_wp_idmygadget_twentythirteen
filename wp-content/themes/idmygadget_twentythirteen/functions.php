@@ -560,14 +560,14 @@ add_action( 'customize_preview_init', 'twentythirteen_idMyGadget_customize_previ
 /**
  * Add in the scripts and stylesheets we need for integration with IdMyGadget
  */
-function enqueue_idmygadget_css()
+function idmygadget_twentythirteenenqueue_styless()
 {
 	$css_file = get_template_directory_uri() . "/idMyGadget/idMyGadget.css";
 	wp_register_style( 'idMyGadget-css', $css_file );
 	wp_enqueue_style( 'idMyGadget-css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'enqueue_idmygadget_css' );
+add_action( 'wp_enqueue_scripts', 'idmygadget_twentythirteenenqueue_styless' );
 
 /**
  * Checks for a valid idMyGadget object; if one is not present:
@@ -575,7 +575,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_idmygadget_css' );
  *   Create a "no detection" object to keep us from whitescreening, and
  *   Set an appropriate error message in the object
  */
-function check_idMyGadget_install()
+function idmygadget_twentythirteen_check_idMyGadget_install()
 {
 	require_once 'idMyGadget/JmwsIdMyGadgetCheckPlugin.php';
 	$jmwsIdMyGadgetCheckPlugin = new JmwsIdMyGadgetCheckPlugin();
