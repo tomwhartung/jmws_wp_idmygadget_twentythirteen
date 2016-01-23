@@ -563,7 +563,8 @@ add_action( 'customize_preview_init', 'twentythirteen_idMyGadget_customize_previ
 function enqueue_idmygadget_css()
 {
 	$css_file = get_template_directory_uri() . "/idMyGadget/idMyGadget.css";
-	wp_enqueue_style( 'idMyGadget-css', $css_file );
+	wp_register_style( 'idMyGadget-css', $css_file );
+	wp_enqueue_style( 'idMyGadget-css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_idmygadget_css' );
