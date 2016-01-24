@@ -1,7 +1,9 @@
 <?php
 /**
- * Class to contain a generic (theme-independent) check for the module being installed and activated.
+ * Functions added to the default WordPress theme twentythirteen.
+ * This code has been added specifically to support device detction.
  *
+ * @author Tom W. Hartung, using the default WordPress theme twentyfifteen as a starting point
  * @package Jmws
  * @subpackage idmygadget_twentythirteen
  * @since idmygadget_twentythirteen 1.0
@@ -30,7 +32,7 @@ class JmwsIdMyGadgetTwentyThirteen
 		}
 		else
 		{
-			$logoTitleDescription = $this->getLogoTitleDescriptionHtml();
+			$logoTitleDescription = self::getLogoTitleDescriptionHtml();
 		}
 	
 		$headerHtml  = '';
