@@ -560,14 +560,13 @@ add_action( 'customize_preview_init', 'twentythirteen_idMyGadget_customize_previ
 /**
  * Add in the scripts and stylesheets we need for integration with IdMyGadget
  */
-function idmygadget_twentythirteenenqueue_styless()
+function idmygadget_twentythirteen_enqueue_styles()
 {
 	$css_file = get_template_directory_uri() . "/idMyGadget/idMyGadget.css";
 	wp_register_style( 'idMyGadget-css', $css_file );
 	wp_enqueue_style( 'idMyGadget-css' );
 }
-
-add_action( 'wp_enqueue_scripts', 'idmygadget_twentythirteenenqueue_styless' );
+add_action( 'wp_enqueue_scripts', 'idmygadget_twentythirteen_enqueue_styles' );
 
 /**
  * Checks for a valid idMyGadget object; if one is not present:
