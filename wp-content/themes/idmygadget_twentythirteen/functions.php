@@ -590,15 +590,12 @@ function idmygadget_twentythirteen_check_idMyGadget_install()
 function twentythirteen_idMyGadget_wp()
 {
 	global $idmg_nav_in_page_or_sidebar_index;
-	global $idmg_nav_in_page_or_sidebar_string;
 	global $jmwsIdMyGadget;
 
 	if( isset($jmwsIdMyGadget) )
 	{
 		$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = FALSE;
-		$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenSidebar = FALSE;
 		$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = FALSE;
-		$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenSidebar = FALSE;
 		if( $jmwsIdMyGadget->phoneHeaderNavThisDevice || $jmwsIdMyGadget->phoneFooterNavThisDevice )
 		{
 			if ( $jmwsIdMyGadget->isPhone() )
@@ -613,21 +610,13 @@ function twentythirteen_idMyGadget_wp()
 			{
 				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_desktops' );
 			}
-			$idmg_nav_in_page_or_sidebar_string =
-			JmwsIdMyGadgetWordpress::$pageOrSidebarTwentyThirteenOptions[$idmg_nav_in_page_or_sidebar_index];
 			if( $jmwsIdMyGadget->phoneHeaderNavThisDevice && has_nav_menu('phone-header-nav') )
 			{
-				$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage =
-				$idmg_nav_in_page_or_sidebar_string == 'Page' ? TRUE : FALSE;
-				$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenSidebar =
-				$idmg_nav_in_page_or_sidebar_string == 'Sidebar' ? TRUE : FALSE;
+				$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = TRUE;
 			}
 			if( $jmwsIdMyGadget->phoneFooterNavThisDevice && has_nav_menu('phone-footer-nav') )
 			{
-				$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage =
-				$idmg_nav_in_page_or_sidebar_string == 'Page' ? TRUE : FALSE;
-				$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenSidebar =
-				$idmg_nav_in_page_or_sidebar_string == 'Sidebar' ? TRUE : FALSE;
+				$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = TRUE;
 			}
 		}
 	}
