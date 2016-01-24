@@ -47,6 +47,11 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>>
+		<?php if( $jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage ) : ?>
+			<nav data-role="navbar">
+				<?php wp_nav_menu( array('theme_location' => 'phone-header-nav', 'container' => false) ); ?>
+			</nav>
+		<?php endif; ?>
 		<header id="masthead" class="site-header" role="banner">
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
