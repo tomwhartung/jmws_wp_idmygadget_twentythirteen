@@ -3,12 +3,15 @@
  * Class to contain a generic (theme-independent) check for the module being installed and activated.
  *
  * @package Jmws
- * @subpackage Twenty_Thirteen_idMyGadget
- * @since Twenty Thirteen IdMyGadget 1.0
+ * @subpackage idmygadget_twentythirteen
+ * @since idmygadget_twentythirteen 1.0
  */
 
 class JmwsIdMyGadgetTwentyThirteen
 {
+	/**
+	 * Note that you do not need to instantiate this class unless you need to call a non-static method.
+	 */
 	public function __construct()
 	{
 	}
@@ -16,7 +19,7 @@ class JmwsIdMyGadgetTwentyThirteen
 	/**
 	 * Use the $logoTitleDescription to generate the html for the header
 	 */
-	public function getHeaderHtml()
+	public static function getHeaderHtml()
 	{
 		global $jmwsIdMyGadget;
 		$logoTitleDescription = '';
@@ -27,7 +30,7 @@ class JmwsIdMyGadgetTwentyThirteen
 		}
 		else
 		{
-			$logoTitleDescription = getLogoTitleDescriptionHtml();
+			$logoTitleDescription = $this->getLogoTitleDescriptionHtml();
 		}
 	
 		$headerHtml  = '';
@@ -44,7 +47,7 @@ class JmwsIdMyGadgetTwentyThirteen
 	 * If the idMyGadget module is not available we will use this,
 	 * which is the original twentythirteen code (as of Sept. 2015).
 	 */
-	public function getLogoTitleDescriptionHtml()
+	protected static function getLogoTitleDescriptionHtml()
 	{
 		$logoTitleDescription = '';
 		if ( is_front_page() && is_home() )
