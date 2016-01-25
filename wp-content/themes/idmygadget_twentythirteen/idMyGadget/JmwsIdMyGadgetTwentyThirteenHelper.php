@@ -12,6 +12,15 @@
 class JmwsIdMyGadgetTwentyThirteenHelper
 {
 	/**
+	 * Boolean indicating whether the phone header nav should be in the page on the current device
+	 */
+	public $phoneHeaderNavInTwentyThirteenPage = FALSE;
+	/**
+	 * Boolean indicating whether the phone footer nav should be in the page on the current device
+	 */
+	public $phoneFooterNavInTwentyThirteenPage = FALSE;
+
+	/**
 	 * Constructor
 	 */
 	public function __construct()
@@ -27,8 +36,8 @@ class JmwsIdMyGadgetTwentyThirteenHelper
 	
 		if( isset($jmwsIdMyGadget) )
 		{
-			$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = FALSE;
-			$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = FALSE;
+			$this->phoneHeaderNavInTwentyThirteenPage = FALSE;
+			$this->phoneFooterNavInTwentyThirteenPage = FALSE;
 			if( $jmwsIdMyGadget->phoneHeaderNavThisDevice || $jmwsIdMyGadget->phoneFooterNavThisDevice )
 			{
 				if ( $jmwsIdMyGadget->isPhone() )
@@ -45,11 +54,11 @@ class JmwsIdMyGadgetTwentyThirteenHelper
 				}
 				if( $jmwsIdMyGadget->phoneHeaderNavThisDevice && has_nav_menu('phone-header-nav') )
 				{
-					$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = TRUE;
+					$this->phoneHeaderNavInTwentyThirteenPage = TRUE;
 				}
 				if( $jmwsIdMyGadget->phoneFooterNavThisDevice && has_nav_menu('phone-footer-nav') )
 				{
-					$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = TRUE;
+					$this->phoneFooterNavInTwentyThirteenPage = TRUE;
 				}
 			}
 		}
