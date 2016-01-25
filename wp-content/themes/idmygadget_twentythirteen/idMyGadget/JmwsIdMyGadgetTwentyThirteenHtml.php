@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions added to the default WordPress theme twentythirteen.
+ * Html functions added to the default WordPress theme twentythirteen.
  * This code has been added specifically to support device detction.
  *
  * @author Tom W. Hartung, using the default WordPress theme twentyfifteen as a starting point

@@ -558,6 +558,25 @@ add_action( 'customize_preview_init', 'twentythirteen_idMyGadget_customize_previ
 // ---------------------------------------------------
 //
 /**
+ * Initialize the environment as needed for this theme
+ * Specifically, if a valid idMyGadget object is not present:
+ *   Diagnose the problem,
+ *   Create a "no detection" object to keep us from whitescreening, and
+ *   Set an appropriate error message in the object
+ */
+require_once 'idMyGadget/JmwsIdMyGadgetCheckPlugin.php';
+require_once 'idMyGadget/JmwsIdMyGadgetTwentyThirteenHtml.php';
+require_once 'idMyGadget/JmwsIdMyGadgetTwentyThirteenHelper.php';
+function twentythirteen_idMyGadget_wp()
+{
+	global $jmwsIdMyGadgetTwentyThirteenHelper;
+	$jmwsIdMyGadgetCheckPlugin = new JmwsIdMyGadgetCheckPlugin();
+	$jmwsIdMyGadgetCheckPlugin->checkPlugin();
+	$jmwsIdMyGadgetTwentyThirteenHelper = new JmwsIdMyGadgetTwentyThirteenHelper();
+	$jmwsIdMyGadgetTwentyThirteenHelper->setPhoneHeaderFooterNavVariables();
+}
+add_action( 'wp', 'twentythirteen_idMyGadget_wp' );
+/**
  * Add in the scripts and stylesheets we need for integration with IdMyGadget
  */
 function idmygadget_twentythirteen_enqueue_styles()
@@ -567,59 +586,3 @@ function idmygadget_twentythirteen_enqueue_styles()
 	wp_enqueue_style( 'idMyGadget-css' );
 }
 add_action( 'wp_enqueue_scripts', 'idmygadget_twentythirteen_enqueue_styles' );
-
-/**
- * Checks for a valid idMyGadget object; if one is not present:
- *   Diagnose the problem,
- *   Create a "no detection" object to keep us from whitescreening, and
- *   Set an appropriate error message in the object
- */
-function idmygadget_twentythirteen_check_idMyGadget_install()
-{
-	require_once 'idMyGadget/JmwsIdMyGadgetCheckPlugin.php';
-	$jmwsIdMyGadgetCheckPlugin = new JmwsIdMyGadgetCheckPlugin();
-	$jmwsIdMyGadgetCheckPlugin->checkPlugin();
-}
-
-/**
- * Initialize:
- * 1) Determine whether the phone nav should be part of the page or the sidebar
- * 2) ???
- * 3) Profit!
- */
-function twentythirteen_idMyGadget_wp()
-{
-	global $idmg_nav_in_page_or_sidebar_index;
-	global $jmwsIdMyGadget;
-
-	if( isset($jmwsIdMyGadget) )
-	{
-		$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = FALSE;
-		$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = FALSE;
-		if( $jmwsIdMyGadget->phoneHeaderNavThisDevice || $jmwsIdMyGadget->phoneFooterNavThisDevice )
-		{
-			if ( $jmwsIdMyGadget->isPhone() )
-			{
-				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_phones' );
-			}
-			else if ( $jmwsIdMyGadget->isTablet() )
-			{
-				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_tablets' );
-			}
-			else
-			{
-				$idmg_nav_in_page_or_sidebar_index = get_theme_mod( 'idmg_nav_in_page_or_sidebar_desktops' );
-			}
-			if( $jmwsIdMyGadget->phoneHeaderNavThisDevice && has_nav_menu('phone-header-nav') )
-			{
-				$jmwsIdMyGadget->phoneHeaderNavInTwentyThirteenPage = TRUE;
-			}
-			if( $jmwsIdMyGadget->phoneFooterNavThisDevice && has_nav_menu('phone-footer-nav') )
-			{
-				$jmwsIdMyGadget->phoneFooterNavInTwentyThirteenPage = TRUE;
-			}
-		}
-	}
-}
-add_action( 'wp', 'twentythirteen_idMyGadget_wp' );
-
