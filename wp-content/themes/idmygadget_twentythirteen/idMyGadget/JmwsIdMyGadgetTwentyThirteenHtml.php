@@ -9,7 +9,7 @@
  * @since idmygadget_twentythirteen 1.0
  */
 
-class JmwsIdMyGadgetTwentyThirteen
+class JmwsIdMyGadgetTwentyThirteenHtml
 {
 	/**
 	 * Note that you do not need to instantiate this class unless you need to call a non-static method.
