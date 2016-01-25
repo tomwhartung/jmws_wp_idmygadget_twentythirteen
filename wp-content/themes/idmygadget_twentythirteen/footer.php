@@ -8,10 +8,13 @@
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
+global $jmwsIdMyGadget;
+global $jmwsIdMyGadgetTwentyThirteenHelper;
 ?>
 
 		</div><!-- #main -->
-		<footer id="colophon" class="site-footer" role="contentinfo">
+		<footer id="colophon" class="site-footer" role="contentinfo"
+			<?php echo $jmwsIdMyGadget->jqmDataRole['footer'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
 			<?php get_sidebar( 'main' ); ?>
 
 			<div class="site-info">
