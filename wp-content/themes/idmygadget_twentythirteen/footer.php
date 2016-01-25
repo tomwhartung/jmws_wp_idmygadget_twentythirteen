@@ -25,5 +25,10 @@ global $jmwsIdMyGadgetTwentyThirteenHelper;
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+	<?php if( $jmwsIdMyGadgetTwentyThirteenHelper->phoneFooterNavInTwentyThirteenPage ) : ?>
+		<nav data-role="navbar" data-position="fixed">
+			<?php wp_nav_menu( array('theme_location' => 'phone-footer-nav', 'container' => false) ); ?>
+		</nav>
+	<?php endif; ?>
 </body>
 </html>
