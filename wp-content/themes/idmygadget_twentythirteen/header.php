@@ -51,7 +51,8 @@
 				<?php wp_nav_menu( array('theme_location' => 'phone-header-nav', 'container' => false) ); ?>
 			</nav>
 		<?php endif; ?>
-		<!-- NOTE: $header_html contains the opening header tag, that is closed below  -->
+		<header id="masthead" class="site-header" role="banner"
+			<?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute; ?> >
 		<?php echo $header_html ?>
 
 			<div id="navbar" class="navbar">
