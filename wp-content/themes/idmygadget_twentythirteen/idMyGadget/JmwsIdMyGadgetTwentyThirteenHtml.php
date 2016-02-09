@@ -46,8 +46,8 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 		$logoTitleDescription = '';
 		$logoTitleDescription .= '<a class="home-link" href="' . esc_url( home_url( '/' ) ) .
 			'title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . 'rel="home">';
-		$logoTitleDescription .= '<h1 class="site-title">' . bloginfo( 'name' ) . '</h1>';
-		$logoTitleDescription .= '<h2 class="site-description">' . bloginfo( 'description' ) . '</h2>';
+		$logoTitleDescription .= '<h1 class="site-title">' . get_bloginfo( 'name' ) . '</h1>';
+		$logoTitleDescription .= '<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>';
 		$logoTitleDescription .=  '</a>';
 		return $logoTitleDescription;
 	}
