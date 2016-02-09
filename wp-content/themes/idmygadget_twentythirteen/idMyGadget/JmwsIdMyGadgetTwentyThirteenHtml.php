@@ -37,13 +37,7 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 			$logoTitleDescription = self::getLogoTitleDescriptionHtml();
 		}
 	
-		$headerHtml  = '';
-		$headerHtml .= '<header id="masthead" class="site-header" role="banner" ';
-		$headerHtml .= $jmwsIdMyGadget->jqmDataRole['header'] . ' ';
-		$headerHtml .= $jmwsIdMyGadget->jqmDataThemeAttribute . '>';
-		$headerHtml .= $logoTitleDescription;
-		// $headerHtml .= '</header><!-- #masthead  ;  .site-header -->';
-		return $headerHtml;
+		return $logoTitleDescription;
 	}
 	/**
 	 * If the idMyGadget module is not available we will use this,
