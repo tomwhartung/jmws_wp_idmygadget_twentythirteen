@@ -46,13 +46,13 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>>
-		<?php if( $jmwsIdMyGadgetTwentyThirteenHelper->phoneHeaderNavInTwentyThirteenPage ) : ?>
-			<nav data-role="navbar">
-				<?php wp_nav_menu( array('theme_location' => 'phone-header-nav', 'container' => false) ); ?>
-			</nav>
-		<?php endif; ?>
 		<header id="masthead" class="site-header" role="banner"
 			<?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute; ?> >
+			<?php if( $jmwsIdMyGadgetTwentyThirteenHelper->phoneHeaderNavInTwentyThirteenPage ) : ?>
+				<nav data-role="navbar">
+					<?php wp_nav_menu( array('theme_location' => 'phone-header-nav', 'container' => false) ); ?>
+				</nav>
+			<?php endif; ?>
 			<?php echo $header_html ?>
 			<?php if( ! $jmwsIdMyGadgetTwentyThirteenHelper->phoneHeaderNavInTwentyThirteenPage ) : ?>
 				<div id="navbar" class="navbar">
