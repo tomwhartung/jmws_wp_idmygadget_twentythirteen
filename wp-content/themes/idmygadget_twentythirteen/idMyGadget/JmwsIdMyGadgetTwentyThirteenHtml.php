@@ -39,29 +39,16 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 	}
 	/**
 	 * If the idMyGadget module is not available we will use this,
-	 * which is the original twentythirteen code (as of Sept. 2015).
+	 * which is the original twentythirteen code (as of Feb. 2016).
 	 */
 	protected static function getLogoTitleDescriptionHtml()
 	{
 		$logoTitleDescription = '';
-		if ( is_front_page() && is_home() )
-		{
-			$logoTitleDescription = '<h1 class="site-title">Exploding!' .
-					'<a href="' . esc_url( home_url('/') ) . '" rel="home">' . $site_name . '</a></h1>';
-		}
-		else
-		{
-			$logoTitleDescription = '<p class="site-title">' .
-					'<a href="' . esc_url( home_url('/') ) . '" rel="home">' . $site_name . '</a></p>';
-		}
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description || is_customize_preview() )
-		{
-			$logoTitleDescription .= '<p class="site-description">' . $description . '</p>';
-		}
-		// $logoTitleDescription .= '<button class="secondary-toggle">' . _e( 'Menu and widgets', 'twentythirteen' ) . '</button>';
-		$logoTitleDescription .= '<button class="secondary-toggle">Menu and widgets</button>';
-	
+		$logoTitleDescription .= '<a class="home-link" href="' . esc_url( home_url( '/' ) ) .
+			'title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . 'rel="home">';
+		$logoTitleDescription .= '<h1 class="site-title">' . bloginfo( 'name' ) . '</h1>';
+		$logoTitleDescription .= '<h2 class="site-description">' . bloginfo( 'description' ) . '</h2>';
+		$logoTitleDescription .=  '</a>';
 		return $logoTitleDescription;
 	}
 }
