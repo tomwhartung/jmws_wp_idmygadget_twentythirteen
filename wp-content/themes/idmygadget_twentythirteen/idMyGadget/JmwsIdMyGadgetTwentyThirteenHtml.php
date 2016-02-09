@@ -28,12 +28,10 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 	
 		if ( $jmwsIdMyGadget->isInstalled() && $jmwsIdMyGadget->isEnabled() )
 		{
-			error_log('getting the idmygadget markup');
 			$logoTitleDescription = $jmwsIdMyGadget->getLogoTitleDescriptionHtml();
 		}
 		else
 		{
-			error_log('getting the jmwsIdMyGadget not installed or not enabled or wtf dude?');
 			$logoTitleDescription = self::getLogoTitleDescriptionHtml();
 		}
 	
