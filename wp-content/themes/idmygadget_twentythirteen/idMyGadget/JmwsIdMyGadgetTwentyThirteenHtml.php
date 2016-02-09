@@ -28,10 +28,12 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 	
 		if ( $jmwsIdMyGadget->isInstalled() && $jmwsIdMyGadget->isEnabled() )
 		{
+			error_log('getting the idmygadget markup');
 			$logoTitleDescription = $jmwsIdMyGadget->getLogoTitleDescriptionHtml();
 		}
 		else
 		{
+			error_log('getting the jmwsIdMyGadget not installed or not enabled or wtf dude?');
 			$logoTitleDescription = self::getLogoTitleDescriptionHtml();
 		}
 	
@@ -39,10 +41,8 @@ class JmwsIdMyGadgetTwentyThirteenHtml
 		$headerHtml .= '<header id="masthead" class="site-header" role="banner" ';
 		$headerHtml .= $jmwsIdMyGadget->jqmDataRole['header'] . ' ';
 		$headerHtml .= $jmwsIdMyGadget->jqmDataThemeAttribute . '>';
-		$headerHtml .= '<div class="site-branding">';
 		$headerHtml .= $logoTitleDescription;
-		$headerHtml .= '</div><!-- .site-branding -->';
-		$headerHtml .= '</header><!-- .site-header -->';
+		// $headerHtml .= '</header><!-- #masthead  ;  .site-header -->';
 		return $headerHtml;
 	}
 	/**
