@@ -39,8 +39,6 @@
 		//
 		global $jmwsIdMyGadget;
 		global $jmwsIdMyGadgetTwentyThirteenHelper;
-		$site_name = get_bloginfo('name' );
-		$header_html = JmwsIdMyGadgetTwentyThirteenHtml::getHeaderHtml();
 	?>
 </head>
 
@@ -53,7 +51,7 @@
 					<?php wp_nav_menu( array('theme_location' => 'phone-header-nav', 'container' => false) ); ?>
 				</nav>
 			<?php endif; ?>
-			<?php echo $header_html ?>
+			<?php echo JmwsIdMyGadgetTwentyThirteenHtml::getHeaderHtml() ?>
 			<?php if( ! $jmwsIdMyGadgetTwentyThirteenHelper->phoneHeaderNavInTwentyThirteenPage ) : ?>
 				<div id="navbar" class="navbar">
 					<nav id="site-navigation" class="navigation main-navigation" role="navigation">
