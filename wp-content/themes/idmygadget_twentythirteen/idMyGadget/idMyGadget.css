@@ -39,6 +39,19 @@ img.logo-file-desktop {
 	display: block;
 	width: 100%;
 }
+.site-title-desktop {
+	margin: 0.2em 0.5em 0em 1em;
+}
+a.site-title-desktop {
+	color: black;
+}
+h1.site-title-desktop a.site-title-desktop :hover {
+	color: blue;
+	text-decoration: underline;
+}
+.site-description-desktop {
+	margin: 0.2em 1em 0.5em 2.5em;
+}
 /*
  * Styles used for the error message
  */
