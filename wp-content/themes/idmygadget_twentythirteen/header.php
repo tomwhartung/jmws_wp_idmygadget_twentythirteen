@@ -18,32 +18,34 @@
 <!--[if !(IE 7) & !(IE 8)]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
+<?php
+//
+// check idMyGadget install:
+//   If the device detection object has NOT been created,
+//     Create an object that can keep the app from whitescreening with a null pointer etc. and
+//     Display an appropriate error message (markup for that is at the end of this file)
+// If we do have the object,
+//   Call its fcn to get the html we need for the header
+//
+global $jmwsIdMyGadget;
+global $jmwsIdMyGadgetTwentyThirteenHelper;
+$site_title_or_name = $jmwsIdMyGadget->getSiteTitleOrName();
+?>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php echo $site_title_or_name; ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-	<?php
-		//
-		// check idMyGadget install:
-		//   If the device detection object has NOT been created,
-		//     Create an object that can keep the app from whitescreening with a null pointer etc. and
-		//     Display an appropriate error message (markup for that is at the end of this file)
-		// If we do have the object,
-		//   Call its fcn to get the html we need for the header
-		//
-		global $jmwsIdMyGadget;
-		global $jmwsIdMyGadgetTwentyThirteenHelper;
-	?>
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page" class="hfeed site" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>>
+	<div id="page" class="hfeed site" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>
+		  data-title="<?php echo $site_title_or_name; ?>">
 		<header id="masthead" class="site-header" role="banner"
 			<?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute; ?> >
 			<?php if( $jmwsIdMyGadgetTwentyThirteenHelper->phoneHeaderNavInTwentyThirteenPage ) : ?>
