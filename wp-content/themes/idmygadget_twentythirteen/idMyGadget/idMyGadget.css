@@ -32,6 +32,19 @@ img.logo-file-tablet {
 	display: block;
 	width: 100%;
 }
+.site-name-tablet {
+	margin: 0.2em 0.5em 0em 0.2em;
+}
+a.site-name-tablet {
+	color: black;
+}
+a.site-name-tablet:hover {
+	color: blue;
+	text-decoration: underline;
+}
+.site-description-tablet {
+	margin: 0.2em 1em 0.5em 2.5em;
+}
 /*
  * Styles used for desktops
  */
