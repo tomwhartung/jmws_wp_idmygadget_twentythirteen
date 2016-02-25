@@ -19,6 +19,11 @@
 .site-title-desktop {
 	display: inline;
 }
+.site-description-phone,
+.site-description-tablet,
+.site-description-desktop {
+	text-align: center;
+}
 img#hamburger-icon-image-left,
 canvas#hamburger-icon-canvas-left {
 	display: inline;
