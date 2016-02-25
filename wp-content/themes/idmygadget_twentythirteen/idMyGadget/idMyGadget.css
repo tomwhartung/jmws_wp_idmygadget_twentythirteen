@@ -4,6 +4,11 @@
 /*
  * For all devices
  */
+.hamburger-icons-name-title-phone,
+.hamburger-icons-name-title-tablet,
+.hamburger-icons-name-title-desktop {
+	text-align: center;
+}
 .site-name-phone,
 .site-name-tablet,
 .site-name-desktop {
