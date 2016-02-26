@@ -34,6 +34,10 @@ canvas#hamburger-icon-canvas-right {
 	display: inline;
 	float: right;
 }
+canvas#hamburger-icon-canvas-left,
+canvas#hamburger-icon-canvas-right {
+	margin: 0.4em;
+}
 /*
  * Styles used for phones
  */
