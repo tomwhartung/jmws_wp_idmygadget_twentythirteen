@@ -72,6 +72,17 @@ $site_title_or_name = $jmwsIdMyGadget->getSiteTitleOrName();
 				{
 					echo $jmwsIdMyGadget->errorMessage;
 				}
+			else
+			{
+				if ( $jmwsIdMyGadget->hamburgerIconLeftOnThisDevice )
+				{
+					wp_nav_menu( array( 'theme_location' => 'hamburger-menu-left', 'container' => false) );
+				}
+				if ( $jmwsIdMyGadget->hamburgerIconRightOnThisDevice )
+				{
+					wp_nav_menu( array( 'theme_location' => 'hamburger-menu-right', 'container' => false) );
+				}
+			}
 			?>
 			<div class="debug">
 				<?php // print $jmwsIdMyGadget->getSanityCheckString(); ?>
