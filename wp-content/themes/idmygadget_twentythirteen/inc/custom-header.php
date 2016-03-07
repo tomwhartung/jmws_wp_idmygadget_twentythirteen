@@ -69,7 +69,7 @@ add_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
  */
 function twentythirteen_custom_header_fonts() {
 	// Add Source Sans Pro and Bitter fonts.
-	wp_enqueue_style( 'twentythirteen-fonts', twentythirteen_fonts_url(), array(), null );
+	wp_enqueue_style( 'twentythirteen-fonts', twentythirteen_idMyGadget_fonts_url(), array(), null );
 
 	// Add Genericons font.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.03' );
