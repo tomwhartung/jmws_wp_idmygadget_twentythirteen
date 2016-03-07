@@ -246,6 +246,42 @@ function twentythirteen_idMyGadget_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar(
+		array(
+			'name' => __( 'Sidebar: Phones Only', 'idmygadget_twentythirteen' ),
+			'id' => 'sidebar-phones',
+			'description' => __( 'Sidebar visible on phones only.', 'idmygadget_twentythirteen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name' => __( 'Sidebar: Tablets Only', 'idmygadget_twentythirteen' ),
+			'id' => 'sidebar-tablets',
+			'description' => __( 'Sidebar visible on tablets only.', 'idmygadget_twentythirteen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name' => __( 'Sidebar: Desktops Only', 'idmygadget_twentythirteen' ),
+			'id' => 'sidebar-desktops',
+			'description' => __( 'Sidebar visible on desktops only.', 'idmygadget_twentythirteen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
 }
 add_action( 'widgets_init', 'twentythirteen_idMyGadget_widgets_init' );
 
