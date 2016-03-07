@@ -228,9 +228,9 @@ add_filter( 'wp_title', 'twentythirteen_idMyGadget_wp_title', 10, 2 );
  */
 function twentythirteen_idMyGadget_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'twentythirteen' ),
+		'name'          => __( 'Main Widget Area', 'idmygadget_twentythirteen' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears in the footer section of the site.', 'twentythirteen' ),
+		'description'   => __( 'Appears in the footer section of the site.', 'idmygadget_twentythirteen' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -238,9 +238,9 @@ function twentythirteen_idMyGadget_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Secondary Widget Area', 'twentythirteen' ),
+		'name'          => __( 'Secondary Widget Area', 'idmygadget_twentythirteen' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears on posts and pages in the sidebar.', 'twentythirteen' ),
+		'description'   => __( 'Appears on posts and pages in the sidebar.', 'idmygadget_twentythirteen' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
