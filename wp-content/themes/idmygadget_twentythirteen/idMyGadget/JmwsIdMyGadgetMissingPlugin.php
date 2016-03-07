@@ -141,4 +141,39 @@ class JmwsIdMyGadgetMissingPlugin
 	{
 		return get_bloginfo('name');
 	}
+	/**
+	 * Because we are not using device detection, assume we are on a desktop PC
+	 */
+	public function isPhone()
+	{
+		return FALSE;
+	}
+	/**
+	 * Because we are not using device detection, assume we are on a desktop PC
+	 */
+	public function isTablet()
+	{
+		return FALSE;
+	}
+	/**
+	 * Because we are not using device detection, assume we are on a desktop PC
+	 */
+	public function isDesktop()
+	{
+		return TRUE;
+	}
+	/**
+	 * Because we are not using device detection, just return the passed in attrs
+	 */
+	public function getFooterAttributes($originalAttributes='')
+	{
+		return $originalAttributes;
+	}
+	/**
+	 * Because we are not using device detection, assume we do not want the sidebar
+	 */
+	public function getIncludeSidebar()
+	{
+		return FALSE;
+	}
 }
