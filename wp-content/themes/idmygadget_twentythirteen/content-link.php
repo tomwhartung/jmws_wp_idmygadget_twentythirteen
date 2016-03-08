@@ -11,11 +11,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title">
-			<a href="<?php echo esc_url( twentythirteen_get_link_url() ); ?>"><?php the_title(); ?></a>
+			<a href="<?php echo esc_url( twentythirteen_idMyGadget_get_link_url() ); ?>"><?php the_title(); ?></a>
 		</h1>
 
 		<div class="entry-meta">
-			<?php twentythirteen_entry_date(); ?>
+			<?php twentythirteen_idMyGadget_entry_date(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -34,7 +34,7 @@
 
 	<?php if ( is_single() ) : ?>
 	<footer class="entry-meta">
-		<?php twentythirteen_entry_meta(); ?>
+		<?php twentythirteen_idMyGadget_entry_meta(); ?>
 		<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 			<?php get_template_part( 'author-bio' ); ?>
 		<?php endif; ?>
