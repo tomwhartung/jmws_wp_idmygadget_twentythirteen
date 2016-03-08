@@ -23,7 +23,7 @@
 
 	<footer class="entry-meta">
 		<?php if ( is_single() ) : ?>
-			<?php twentythirteen_entry_meta(); ?>
+			<?php twentythirteen_idMyGadget_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 
 			<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
@@ -31,7 +31,7 @@
 			<?php endif; ?>
 
 		<?php else : ?>
-			<?php twentythirteen_entry_date(); ?>
+			<?php twentythirteen_idMyGadget_entry_date(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 		<?php endif; // is_single() ?>
 	</footer><!-- .entry-meta -->
