@@ -22,7 +22,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php twentythirteen_entry_meta(); ?>
+		<?php twentythirteen_idMyGadget_entry_meta(); ?>
 
 		<?php if ( comments_open() && ! is_single() ) : ?>
 		<span class="comments-link">

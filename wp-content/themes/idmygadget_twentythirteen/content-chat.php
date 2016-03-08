@@ -32,7 +32,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php twentythirteen_entry_meta(); ?>
+		<?php twentythirteen_idMyGadget_entry_meta(); ?>
 		<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post -->
