@@ -54,7 +54,7 @@ get_header(); ?>
 
 					<div class="entry-attachment">
 						<div class="attachment">
-							<?php twentythirteen_the_attached_image(); ?>
+							<?php twentythirteen_idMyGadget_the_attached_image(); ?>
 
 							<?php if ( has_excerpt() ) : ?>
 							<div class="entry-caption">
