@@ -67,23 +67,20 @@ $site_title_or_name = $jmwsIdMyGadget->getSiteTitleOrName();
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main" <?php echo $jmwsIdMyGadget->jqmDataRole['content'] ?>>
-			<?php
-				if (isset($jmwsIdMyGadget->errorMessage) )
-				{
-					echo $jmwsIdMyGadget->errorMessage;
-				}
-				else
-				{
-					if ( $jmwsIdMyGadget->hamburgerIconLeftOnThisDevice )
-					{
-						wp_nav_menu( array( 'theme_location' => 'hamburger-menu-left', 'container' => false) );
-					}
-					if ( $jmwsIdMyGadget->hamburgerIconRightOnThisDevice )
-					{
+			<?php if (isset($jmwsIdMyGadget->errorMessage) ) : ?>
+				<?php echo $jmwsIdMyGadget->errorMessage; ?>
+			<?php else : ?>
+				<?php if ( $jmwsIdMyGadget->hamburgerIconLeftOnThisDevice ) : ?>
+					<div data-role="page" id="phone-burger-menu-left">
+						<?php wp_nav_menu( array( 'theme_location' => 'hamburger-menu-left', 'container' => false) ); ?>
+					</div>
+				<?php endif; ?>
+				<?php if ( $jmwsIdMyGadget->hamburgerIconRightOnThisDevice ) : ?>
+					<div data-role="page" id="phone-burger-menu-right">
 						wp_nav_menu( array( 'theme_location' => 'hamburger-menu-right', 'container' => false) );
-					}
-				}
-			?>
+					</div>
+				<?php endif; ?>
+			<?php endif; ?>
 			<div class="debug">
 				<?php // print $jmwsIdMyGadget->getSanityCheckString(); ?>
 			</div> <!-- .debug -->
