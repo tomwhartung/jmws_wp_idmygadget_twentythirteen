@@ -3225,23 +3225,3 @@ footer.entry-meta {
 		color: #333;
 	}
 }
-/*
- * This fixes the issue with the sidebar overlapping the content.
- * Reference: https://wordpress.org/support/topic/sidebar-overlaps-footer-in-twentythirteen
- */
-@media (min-width: 999px) {
-	#main {
-		overflow: hidden; /* needed to stretch parent container since children are floated */ } #primary.content-area {
-		width: 68%;
-		float: left;
-	}
-	.site-main .sidebar-container {
-		position: static;
-		float: right;
-		width: 30%;
-		height: auto;
-	}
-	.sidebar .entry-header, .sidebar .entry-content, .sidebar .entry-summary, .sidebar .entry-meta {
-		padding: 0;
-	}
-}
