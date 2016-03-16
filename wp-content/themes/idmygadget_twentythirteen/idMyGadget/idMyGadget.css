@@ -146,4 +146,9 @@ span.idmygadget-error {
 		padding: 0;
 	}
 }
-
+/*
+ * Overriding select styles in ../style.css so that I am happier with how things look
+ */
+.archive-title {
+	font-size: 1.0em;
+}
