@@ -1,0 +1,21 @@
+/*
+ * Styles for use by idMyGadget code - phones only
+ */
+/*
+ * Overriding the main color (#e8e5ce) in ../../style.css
+ *   so we can have different shades on different device types
+ * Fwiw these are listed in the same sequence in which they appear in ../../style.css
+ */
+.attachment .hentry,
+.paging-navigation,
+.archive-header,
+.page-header,
+.error404 .page-wrapper,
+.site-footer {
+	background-color: #f0f0f0;
+}
+
+.error404 .page-title:before {
+	color: #f0f0f0;
+}
+
