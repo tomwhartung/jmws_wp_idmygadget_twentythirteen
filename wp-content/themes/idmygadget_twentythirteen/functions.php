@@ -633,6 +633,22 @@ function idmygadget_twentythirteen_enqueue_styles()
 	$css_file = get_template_directory_uri() . "/idMyGadget/css/idMyGadget.css";
 	wp_register_style( 'idMyGadget-css', $css_file );
 	wp_enqueue_style( 'idMyGadget-css' );
+
+	global $jmwsIdMyGadget;
+	if ( $jmwsIdMyGadget->isPhone() )
+	{
+		$css_file = get_template_directory_uri() . "/idMyGadget/css/idMyGadget-phone.css";
+	}
+	else if ( $jmwsIdMyGadget->isTablet() )
+	{
+		$css_file = get_template_directory_uri() . "/idMyGadget/css/idMyGadget-tablet.css";
+	}
+	else
+	{
+		$css_file = get_template_directory_uri() . "/idMyGadget/css/idMyGadget-desktop.css";
+	}
+	wp_register_style( 'idMyGadget-deviceType-css', $css_file );
+	wp_enqueue_style( 'idMyGadget-deviceType-css' );
 }
 add_action( 'wp_enqueue_scripts', 'idmygadget_twentythirteen_enqueue_styles' );
 
