@@ -12,10 +12,10 @@
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
-	background-color: #b0ffb0;
+	background-color: #bfffbf;
 }
 
 .error404 .page-title:before {
-	color: #b0ffb0;
+	color: #bfffbf;
 }
 
