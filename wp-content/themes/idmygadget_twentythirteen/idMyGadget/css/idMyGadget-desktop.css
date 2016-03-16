@@ -20,29 +20,39 @@
 }
 
 /*
+ * Overriding the colors used in the sidebar (widget area)
+ * 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' = tried 'widget-area' and 'sidebar' ...
+ * I.e. finding and changing the color of 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' class and any other selectors
+ *   that use that color
+ * When I find a color, I search for it, then copy in all the selectors that use that color
+ * But I am starting (finding colors) by looking at the XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX css class.
+ * Again fwiw trying to list these in the same sequence in which they appear in ../../style.css
+ */
+
+/*
  * Overriding the colors used in the main navigation menu
  * I.e. finding and changing the color of classes 'navbar' and 'nav-menu''
  * When I find a color, I search for it, then copy in all the selectors that use that color
- * But I am starting (finding colors) )by looking at the nav-menu css class.
- * Again fwiw these are listed in the same sequence in which they appear in ../../style.css
+ * But I am starting (finding colors) by looking at the nav-menu css class.
+ * Again fwiw trying to list these in the same sequence in which they appear in ../../style.css
  */
 .nav-menu .sub-menu,
 .nav-menu .children {
-	border-color: #f7f5e7;   /* Essentially grey, */
+	border-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
 }
 .navbar,
 .format-aside,
 .format-link,
 .comment-respond,
 .no-comments {
-	background-color: #bfffff; /* #f7f5e7;   /* Essentially grey, */
+	background-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
 }
 .format-quote .entry-content,
 .format-quote .entry-meta,
 .format-status .entry-meta a,
 .format-status .entry-content,
 .single-format-status .author-description {
-	color: #f7f5e7;   /* Essentially grey, */
+	color: #f7f5e7;   /* essentially grey, */
 }
 body,
 input,
