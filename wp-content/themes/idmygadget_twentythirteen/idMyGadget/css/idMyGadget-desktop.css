@@ -1,6 +1,9 @@
 /*
  * Styles for use by idMyGadget code - desktops only
  */
+.widget {
+	background-color: #bfffff;
+}
 /*
  * Overriding the main color (#e8e5ce) in ../../style.css
  *   so we can have different shades on different device types
