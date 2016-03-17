@@ -94,8 +94,7 @@ ul.nav-menu ul a:hover,
 ul.nav-menu ul a:focus,
 .nav-menu ul ul a:focus,
 .format-audio,
-.format-video,
-.entry-meta a {
+.format-video {
 	background-color: #db572f;   /* lighter orange */
 }
 
