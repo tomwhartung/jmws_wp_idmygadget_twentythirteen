@@ -357,7 +357,8 @@ function twentythirteen_idMyGadget_entry_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() )
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'twentythirteen' ) . '</span>';
 
-	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
+	global $twentythirteen_idMyGadget_display_date;
+	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() && $twentythirteen_idMyGadget_display_date )
 		twentythirteen_idMyGadget_entry_date();
 
 	// Translators: used between list items, there is a space after the comma.
@@ -593,6 +594,7 @@ add_action( 'customize_preview_init', 'twentythirteen_idMyGadget_customize_previ
 // Begin changes added for integration with IdMyGadget
 // ---------------------------------------------------
 //
+$twentythirteen_idMyGadget_display_date = FALSE;  // See function twentythirteen_idMyGadget_entry_meta
 /**
  * Initialize the environment as needed for this theme
  * Specifically, if a valid idMyGadget object is not present:
