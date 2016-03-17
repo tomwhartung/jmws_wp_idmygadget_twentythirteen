@@ -1,13 +1,19 @@
 /*
  * Styles for use by idMyGadget code - desktops only
  *
- * Most of these styles are to set colors
+ * Most of these styles are to set colors; some of these colors come from the header image
+ * At this time we are using for desktops: IMG_3317-crp_scl_1-posterize_1.jpeg
+ * ==> If you change the header image, you may want to change the colors accordingly
  *
+ * #404080 is a purple that matches a few areas (e.g., the dome near the bottom) in the header
  * #bfffff is a light blue-green that matches a bit of sky in the header image
- * we are using for desktops: IMG_3317-crp_scl_1-posterize_1.jpeg
- * Using blue (#0000EE) for links;
+ * #0000EE (blue)) is the default standard color for links;
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  */
+a:visited {
+	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
+}
+
 /*
  * Overriding the main color (#e8e5ce) in ../../style.css
  *   so we can have different shades on different device types
@@ -106,6 +112,9 @@ ul.nav-menu ul a:focus,
 	background-color: #db572f;   /* lighter orange */
 }
 
+/*
+ * anchor tags (links) NOT YET VISITED
+ */
 .nav-menu .current_page_item > a,
 .nav-menu .current_page_ancestor > a,
 .nav-menu .current-menu-item > a,
@@ -123,13 +132,33 @@ ul.nav-menu ul a:focus,
 .widget a {
 	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
 }
+/*
+ * anchor tags (links) THAT HAVE BEEN VISITED
+ */
+.nav-menu .current_page_item > a:visited,
+.nav-menu .current_page_ancestor > a:visited,
+.nav-menu .current-menu-item > a:visited,
+.nav-menu .current-menu-ancestor > a:visited,
+.entry-meta a:visited,
+.entry-meta a:hover,
+.entry-content a:visited,
+.comment-content a:visited,
+.format-link .entry-title a:visited,
+.navigation a:visited,
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login,
+.widget a:visited {
+	color: #404080;   /* see comment in header; NOT defined (per se) in style.css */
+}
 
 @media (max-width: 643px) {
 	.menu-toggle,
 	.menu-toggle:hover,
 	.menu-toggle:focus,
 	.menu-toggle:active,
-	.toggled-on .nav-menu li > ul a,
+	.toggled-on .nav-menu li > ul a:visited,
 	.toggled-on .nav-menu li:hover > a,
 	.toggled-on .nav-menu .children a {
 		color: #141412;   /* essentially black */
