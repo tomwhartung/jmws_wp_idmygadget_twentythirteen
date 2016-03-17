@@ -14,6 +14,21 @@ a:visited {
 	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
 }
 
+a:active,
+a:hover,
+.entry-title a:hover,
+.entry-content a:hover,
+.comment-content a:hover,
+.navigation a:hover,
+.comment-meta a:hover,
+.widget a:hover {
+	color: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+}
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+.paging-navigation a:hover .meta-nav {
+	background: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+}
+
 /*
  * Overriding the main color (#e8e5ce) in ../../style.css
  *   so we can have different shades on different device types
@@ -21,7 +36,7 @@ a:visited {
  */
 .attachment .hentry,
 .paging-navigation,
-/* .archive-header,  // decided I hate this; see below */
+/* .archive-header,  // decided I hate this; see override immediately below */
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
@@ -102,7 +117,7 @@ textarea,
 .nav-menu li a:focus,
 ul.nav-menu ul a,
 .nav-menu ul ul a {
-	color: #fff;
+	color: #fff   /* black */
 }
 
 ul.nav-menu ul a:hover,
