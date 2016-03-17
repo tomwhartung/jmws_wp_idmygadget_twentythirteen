@@ -1,9 +1,13 @@
 /*
  * Styles for use by idMyGadget code - desktops only
+ *
+ * Most of these styles are to set colors
+ *
+ * #bfffff is a light blue-green that matches a bit of sky in the header image
+ * we are using for desktops: IMG_3317-crp_scl_1-posterize_1.jpeg
+ * Using blue (#0000EE) for links;
+ *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  */
-.widget {
-	background-color: #bfffff;
-}
 /*
  * Overriding the main color (#e8e5ce) in ../../style.css
  *   so we can have different shades on different device types
@@ -15,22 +19,23 @@
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
-	background-color: #bfffff;
+	background-color: #bfffff;   /* See comment in header */
 }
 
 .error404 .page-title:before {
-	color: #bfffff;
+	color: #bfffff;   /* See comment in header */
 }
 
 /*
  * Overriding the colors used in the sidebar (widget area)
- * 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' = tried 'widget-area' and 'sidebar' ...
- * I.e. finding and changing the color of 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' class and any other selectors
- *   that use that color
+ * Tried 'widget-area' and 'sidebar' but it turns out we want to use the widget class
  * When I find a color, I search for it, then copy in all the selectors that use that color
  * But I am starting (finding colors) by looking at the XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX css class.
  * Again fwiw trying to list these in the same sequence in which they appear in ../../style.css
  */
+.widget {
+	background-color: #bfffff;   /* See comment in header */
+}
 
 /*
  * Overriding the colors used in the main navigation menu
@@ -116,7 +121,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a {
-	color: #bc360a;   /* darker orange */
+	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
 }
 
 @media (max-width: 643px) {
