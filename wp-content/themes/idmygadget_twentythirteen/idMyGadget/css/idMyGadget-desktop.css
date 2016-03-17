@@ -21,13 +21,15 @@ a:visited {
  */
 .attachment .hentry,
 .paging-navigation,
-.archive-header,
+/* .archive-header,  // decided I hate this; see below */
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
 	background-color: #bfffff;   /* See comment in header */
 }
-
+.archive-header {
+	background-color: #ffffff;   /* decided I did not want a background color on this elt */
+}
 .error404 .page-title:before {
 	color: #bfffff;   /* See comment in header */
 }
