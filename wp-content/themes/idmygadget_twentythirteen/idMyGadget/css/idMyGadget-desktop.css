@@ -1,19 +1,35 @@
 /*
  * Styles for use by idMyGadget code - desktops only
  *
- * Most of these styles are to set colors; some of these colors come from the header image
+ * Overriding the colors used for text and anchor tags (links) in ../../style.css
+ *   so we can have a slightly different look on different device types
+ *
+ * Overall Process:
+ * (1) Find an element ("Inspect") in the page that has a color that I want to change
+ *     For the main navigation menu, looked at the color of classes 'navbar' and 'nav-menu''
+ *     For widgets: started by looking at the 'widget-area' and 'sidebar' but
+ *       it turns out we want to use the widget class
+ * (2) Search for it, then copy in all the selectors that use that color
+ * (3) Decide on the color I want to use for these elements
+ * (4) Designate the color we want to use, keeping the old one in comments for reference
+ *
+ * Fwiw these are, for the most part, listed in the same sequence in which
+ *   they appear in ../../style.css
+ *
+ * Most of these styles are for setting colors; some of these colors come from the header image
  * At this time we are using for desktops: IMG_3317-crp_scl_1-posterize_1.jpeg
  * ==> If you change the header image, you may want to change the colors accordingly
  *
+ * Specific colors used on desktops:
  * #404080 is a purple that matches a few areas (e.g., the dome near the bottom) in the header
  * #bfffff is a light blue-green that matches a bit of sky in the header image
  * #0000EE (blue)) is the default standard color for links;
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
+ *
  */
 a:visited {
 	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
 }
-
 a:active,
 a:hover,
 .entry-title a:hover,
@@ -28,12 +44,6 @@ a:hover,
 .paging-navigation a:hover .meta-nav {
 	background: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
 }
-
-/*
- * Overriding the main color (#e8e5ce) in ../../style.css
- *   so we can have different shades on different device types
- * Fwiw these are listed in the same sequence in which they appear in ../../style.css
- */
 .attachment .hentry,
 .paging-navigation,
 /* .archive-header,  // decided I hate this; see override immediately below */
@@ -46,26 +56,16 @@ a:hover,
 	background-color: #ffffff;   /* decided I did not want a background color on this elt */
 }
 .error404 .page-title:before {
-	color: #bfffff;   /* See comment in header */
+	color: #bfffff;   /* See comment in header; formerly #e8e5ce; (grey) */
 }
-
 /*
  * Overriding the colors used in the sidebar (widget area)
- * Tried 'widget-area' and 'sidebar' but it turns out we want to use the widget class
- * When I find a color, I search for it, then copy in all the selectors that use that color
- * But I am starting (finding colors) by looking at the XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX css class.
- * Again fwiw trying to list these in the same sequence in which they appear in ../../style.css
  */
 .widget {
 	background-color: #bfffff;   /* See comment in header */
 }
-
 /*
  * Overriding the colors used in the main navigation menu
- * I.e. finding and changing the color of classes 'navbar' and 'nav-menu''
- * When I find a color, I search for it, then copy in all the selectors that use that color
- * But I am starting (finding colors) by looking at the nav-menu css class.
- * Again fwiw trying to list these in the same sequence in which they appear in ../../style.css
  */
 .nav-menu .sub-menu,
 .nav-menu .children {
@@ -150,7 +150,8 @@ ul.nav-menu ul a:focus,
 	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
 }
 /*
- * anchor tags (links) THAT HAVE BEEN VISITED
+ * Anchor tags (links) THAT HAVE BEEN VISITED
+ * These were NOT originally defined (per se) in ../../style.css
  */
 .nav-menu .current_page_item > a:visited,
 .nav-menu .current_page_ancestor > a:visited,
@@ -167,7 +168,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a:visited {
-	color: #404080;   /* see comment in header; NOT defined (per se) in style.css */
+	color: #404080;   /* see comment in header */
 }
 
 @media (max-width: 643px) {
