@@ -1,24 +1,195 @@
 /*
  * Styles for use by idMyGadget code - phones only
+ *
+ * Overriding the colors used for text and anchor tags (links) in ../../style.css
+ *   so we can have a slightly different look on different device types
+ *
+ * Overall Process:
+ * (1) Find an element ("Inspect") in the page that has a color that I want to change
+ *     For the main navigation menu, looked at the color of classes 'navbar' and 'nav-menu''
+ *     For widgets: started by looking at the 'widget-area' and 'sidebar' but
+ *       it turns out we want to use the widget class
+ * (2) Search for it, then copy in all the selectors that use that color
+ * (3) Decide on the color I want to use for these elements
+ * (4) Designate the color we want to use, keeping the old one in comments for reference
+ *
+ * Fwiw these are, for the most part, listed in the same sequence in which
+ *   they appear in ../../style.css
+ *
+ * Most of these styles are for setting colors;
+ * At this time we are NOT using a header image on phones
+ * ==> If you add a header image, you may want to change the colors accordingly
+ *
+ * Specific colors used on phones:
+ * #f0f0f0 ????????????????????????
+ * #0000EE (blue)) is the default standard color for links;
+ *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
+ *
  */
-/*
- * Overriding the main color (#e8e5ce) in ../../style.css
- *   so we can have different shades on different device types
- * Fwiw these are listed in the same sequence in which they appear in ../../style.css
- */
+a:visited {
+	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
+}
+a:active,
+a:hover,
+.entry-title a:hover,
+.entry-content a:hover,
+.comment-content a:hover,
+.navigation a:hover,
+.comment-meta a:hover,
+.widget a:hover {
+	color: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+}
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+.paging-navigation a:hover .meta-nav {
+	background: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+}
 .attachment .hentry,
 .paging-navigation,
-.archive-header,
+/* .archive-header,  // decided I hate this; see override immediately below */
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
 	background-color: #f0f0f0;
 }
-
-.error404 .page-title:before {
-	color: #f0f0f0;
+.archive-header {
+	background-color: #ffffff;   /* decided I did not want a background color on this elt */
 }
-
+.error404 .page-title:before {
+	color: #f0f0f0;   /* See comment in header; formerly #e8e5ce; (grey) */
+}
 /*
  * Overriding the colors used in the main navigation menu
   */
+.nav-menu .sub-menu,
+.nav-menu .children {
+	border-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
+}
+.navbar,
+.format-aside,
+.format-link,
+.comment-respond,
+.no-comments {
+	background-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
+}
+.format-quote .entry-content,
+.format-quote .entry-meta,
+.format-status .entry-meta a,
+.format-status .entry-content,
+.single-format-status .author-description {
+	color: #f7f5e7;   /* essentially grey, */
+}
+body,
+input,
+textarea,
+.site-header .home-link,
+.nav-menu li a,
+.entry-title a {
+	color: #141412;   /* essentially black */
+}
+
+.wp-caption .wp-caption-text,
+.entry-caption,
+.gallery-caption,
+.format-video .entry-meta {
+	color: #220e10;   /* essentially black */
+}
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+.nav-menu li:focus > a,
+.nav-menu li a:focus,
+.nav-menu .sub-menu,
+.nav-menu .children,
+.hentry .mejs-mediaelement,
+.hentry .mejs-container .mejs-controls,
+.site-footer .sidebar-container {
+	background-color: #220e10;   /* essentially black */
+}
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+.nav-menu li:focus > a,
+.nav-menu li a:focus,
+ul.nav-menu ul a,
+.nav-menu ul ul a {
+	color: #fff   /* black */
+}
+
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover,
+ul.nav-menu ul a:focus,
+.nav-menu ul ul a:focus,
+.format-audio,
+.format-video {
+	background-color: #db572f;   /* lighter orange */
+}
+
+/*
+ * anchor tags (links) NOT YET VISITED
+ */
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a,
+.entry-meta a,
+.entry-meta a:hover,
+.entry-content a,
+.comment-content a,
+.format-link .entry-title a,
+.navigation a,
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login,
+.widget a {
+	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
+}
+/*
+ * Anchor tags (links) THAT HAVE BEEN VISITED
+ * These were NOT originally defined (per se) in ../../style.css
+ */
+.nav-menu .current_page_item > a:visited,
+.nav-menu .current_page_ancestor > a:visited,
+.nav-menu .current-menu-item > a:visited,
+.nav-menu .current-menu-ancestor > a:visited,
+.entry-meta a:visited,
+.entry-meta a:hover,
+.entry-content a:visited,
+.comment-content a:visited,
+.format-link .entry-title a:visited,
+.navigation a:visited,
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login,
+.widget a:visited {
+	color: #404080;   /* see comment in header */
+}
+
+@media (max-width: 643px) {
+	.menu-toggle,
+	.menu-toggle:hover,
+	.menu-toggle:focus,
+	.menu-toggle:active,
+	.toggled-on .nav-menu li > ul a:visited,
+	.toggled-on .nav-menu li:hover > a,
+	.toggled-on .nav-menu .children a {
+		color: #141412;   /* essentially black */
+	}
+
+	.toggled-on .nav-menu > li a:hover,
+	.toggled-on .nav-menu > ul a:hover {
+		background-color: #db572f;   /* lighter orange */
+	}
+	.toggled-on .nav-menu > li a:hover,
+	.toggled-on .nav-menu > ul a:hover {
+		color: #fff;
+	}
+
+	.toggled-on .nav-menu > li a:focus,
+	.toggled-on .nav-menu > ul a:focus {
+		background-color: #220e10;   /* essentially black */
+	}
+	.toggled-on .nav-menu > li a:focus,
+	.toggled-on .nav-menu > ul a:focus {
+		color: #fff;
+	}
+}
