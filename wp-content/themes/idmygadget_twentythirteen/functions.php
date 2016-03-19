@@ -637,6 +637,13 @@ function idmygadget_twentythirteen_enqueue_styles()
 	wp_enqueue_style( 'idMyGadget-css' );
 
 	global $jmwsIdMyGadget;
+
+	if ( $jmwsIdMyGadget->usingJQueryMobile )
+	{
+		wp_register_style( 'jquerymobile-css', JmwsIdMyGadget::JQUERY_MOBILE_CSS_URL );
+		wp_enqueue_style( 'jquerymobile-css' );
+	}
+
 	if ( $jmwsIdMyGadget->isPhone() )
 	{
 		$css_file = get_template_directory_uri() . "/idMyGadget/css/idMyGadget-phone.css";
