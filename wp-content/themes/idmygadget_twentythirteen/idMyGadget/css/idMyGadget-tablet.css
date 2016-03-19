@@ -20,14 +20,19 @@
  * At this time we are using for tablets: IMG_4239-crp_scl_3-threshold_1.jpeg 
  * ==> If you change the header image, you may want to change the colors accordingly
  *
+ * Default colors for anchor tags :
+ *   #0000EE - not yet visited links
+ *   #551A8B - visited links
+ *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  * Specific colors used on tablets:
  * #eeeeee (light gray) used for backgrounds on the main nav and sidebar
- * #0000EE (blue) is the default standard color for links;
+ * #EE0000 (red) same values as the default standard color for links except red instead of blue;
+ * #703030 (dark red) for visited links
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  *
  */
 a:visited {
-	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
+	color: #A03030;   /* See comment in header formerly: #ac0404; (brown) */
 }
 a:active,
 a:hover,
@@ -37,11 +42,11 @@ a:hover,
 .navigation a:hover,
 .comment-meta a:hover,
 .widget a:hover {
-	color: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+	color: #A03030;   /* See comment in header formerly: #ea9629; (dark yellow) */
 }
 .hentry .mejs-controls .mejs-time-rail .mejs-time-current,
 .paging-navigation a:hover .meta-nav {
-	background: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
+	background: #A03030;   /* See comment in header formerly: #ea9629; (dark yellow) */
 }
 .attachment .hentry,
 .paging-navigation,
@@ -146,7 +151,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a {
-	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
+	color: #EE0000;   /* see comment in header; formerly #bc360a (darker orange) */
 }
 /*
  * Anchor tags (links) THAT HAVE BEEN VISITED
@@ -167,7 +172,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a:visited {
-	color: #404080;   /* see comment in header */
+	color: #A03030;   /* see comment in header */
 }
 
 @media (max-width: 643px) {
