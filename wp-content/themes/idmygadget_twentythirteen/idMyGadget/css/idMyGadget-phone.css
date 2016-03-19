@@ -25,13 +25,13 @@
  *   #551A8B - visited links
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  * Specific colors used on phones:
- *   #22AA22: (green) for unvisited links - to match rightmost hamburger menu icon
- *   #008000 (dark green) for visited links - to harmonize with rightmost hamburger menu icon
+ *   red: (red) for unvisited links - to match rightmost hamburger menu icon
+ *   blue: (blue) for visited links - to match leftmost hamburger menu icon
  * #f0f0f0 ????????????????????????
  *
  */
 a:visited {
-	color: #008000;   /* See comment in header formerly: #ac0404; (brown) */
+	color: blue;   /* See comment in header formerly: #ac0404; (brown) */
 }
 a:active,
 a:hover,
@@ -150,7 +150,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a {
-	color: #22AA22;   /* see comment in header; formerly #bc360a (darker orange) */
+	color: red;   /* see comment in header; formerly #bc360a (darker orange) */
 }
 /*
  * Anchor tags (links) THAT HAVE BEEN VISITED
@@ -171,7 +171,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a:visited {
-	color: #008000;   /* see comment in header */
+	color: blue;   /* see comment in header */
 }
 
 @media (max-width: 643px) {
