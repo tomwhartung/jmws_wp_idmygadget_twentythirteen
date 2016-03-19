@@ -25,13 +25,14 @@
  *   #551A8B - visited links
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  * Specific colors used on tablets:
- * #eeeeee (light gray) used for backgrounds on the main nav and sidebar
+ * #EEEEEE (light gray) used for backgrounds on the main nav and sidebar
  * #EE0000 (red) same values as the default standard color for links except red instead of blue;
  * #703030 (dark red) for visited links
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  *
  */
-a.site-name-tablet:hover {
+a.site-name-tablet:hover,
+a.site-title-tablet:hover{
 	color: #A03030;
 }
 a:visited {
@@ -57,33 +58,33 @@ a:hover,
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
-	background-color: #eeeeee;
+	background-color: #EEEEEE;
 }
 .archive-header {
-	background-color: #ffffff;   /* decided I did not want a background color on this elt */
+	background-color: #FFFFFF;   /* decided I did not want a background color on this elt */
 }
 .error404 .page-title:before {
-	color: #eeeeee;   /* See comment in header; formerly #e8e5ce; (grey) */
+	color: #EEEEEE;   /* See comment in header; formerly #e8e5ce; (grey) */
 }
 /*
  * Overriding the colors used in the sidebar (widget area)
  */
 .widget {
-	background-color: #eeeeee;   /* See comment in header */
+	background-color: #EEEEEE;   /* See comment in header */
 }
 /*
  * Overriding the colors used in the main navigation menu
   */
 .nav-menu .sub-menu,
 .nav-menu .children {
-	border-color: #eeeeee; /* formerly #f7f5e7; - essentially grey, */
+	border-color: #EEEEEE; /* formerly #f7f5e7; - essentially grey, */
 }
 .navbar,
 .format-aside,
 .format-link,
 .comment-respond,
 .no-comments {
-	background-color: #eeeeee; /* formerly #f7f5e7; - essentially grey, */
+	background-color: #EEEEEE; /* formerly #f7f5e7; - essentially grey, */
 }
 .format-quote .entry-content,
 .format-quote .entry-meta,
