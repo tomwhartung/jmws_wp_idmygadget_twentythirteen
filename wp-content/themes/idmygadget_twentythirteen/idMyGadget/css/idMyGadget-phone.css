@@ -58,6 +58,12 @@ a:hover,
 	color: #f0f0f0;   /* See comment in header; formerly #e8e5ce; (grey) */
 }
 /*
+ * Overriding the colors used in the sidebar (widget area)
+ */
+.widget {
+	background-color: #bfffff;   /* See comment in header */
+}
+/*
  * Overriding the colors used in the main navigation menu
   */
 .nav-menu .sub-menu,
