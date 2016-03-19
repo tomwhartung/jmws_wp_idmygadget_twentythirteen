@@ -31,6 +31,9 @@
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  *
  */
+a.site-name-tablet:hover {
+	color: #A03030;
+}
 a:visited {
 	color: #A03030;   /* See comment in header formerly: #ac0404; (brown) */
 }
