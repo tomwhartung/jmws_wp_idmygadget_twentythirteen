@@ -1,5 +1,5 @@
 /*
- * Styles for use by idMyGadget code - phones only
+ * Styles for use by idMyGadget code - on phones only
  *
  * Overriding the colors used for text and anchor tags (links) in ../../style.css
  *   so we can have a slightly different look on different device types
@@ -20,14 +20,18 @@
  * At this time we are NOT using a header image on phones
  * ==> If you add a header image, you may want to change the colors accordingly
  *
- * Specific colors used on phones:
- * #f0f0f0 ????????????????????????
- * #0000EE (blue)) is the default standard color for links;
+ * Default colors for anchor tags :
+ *   #0000EE - not yet visited links
+ *   #551A8B - visited links
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
+ * Specific colors used on phones:
+ *   #EE0000: (red) for unvisited links - to match rightmost hamburger menu icon
+ *   #BB1555
+ * #f0f0f0 ????????????????????????
  *
  */
 a:visited {
-	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
+	color: #BB1555;   /* See comment in header formerly: #ac0404; (brown) */
 }
 a:active,
 a:hover,
@@ -146,7 +150,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a {
-	color: #0000EE;   /* see comment in header; formerly #bc360a (darker orange) */
+	color: #EE0000;   /* see comment in header; formerly #bc360a (darker orange) */
 }
 /*
  * Anchor tags (links) THAT HAVE BEEN VISITED
@@ -167,7 +171,7 @@ ul.nav-menu ul a:focus,
 .comment-reply-link,
 .comment-reply-login,
 .widget a:visited {
-	color: #404080;   /* see comment in header */
+	color: #BB1555;   /* see comment in header */
 }
 
 @media (max-width: 643px) {
