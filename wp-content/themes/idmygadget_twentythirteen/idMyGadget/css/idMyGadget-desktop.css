@@ -20,13 +20,21 @@
  * At this time we are using for desktops: IMG_3317-crp_scl_1-posterize_1.jpeg
  * ==> If you change the header image, you may want to change the colors accordingly
  *
+ * Default colors for anchor tags :
+ *   #0000EE - not yet visited links
+ *   #551A8B - visited links
+ *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  * Specific colors used on desktops:
  * #404080 is a purple that matches a few areas (e.g., the dome near the bottom) in the header
  * #bfffff is a light blue-green that matches a bit of sky in the header image
- * #0000EE (blue)) is the default standard color for links;
+ * #0000EE (blue) is the default standard color for links;
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  *
  */
+a.site-name-desktop:hover,
+a.site-title-desktop:hover{
+	color: #404080;
+}
 a:visited {
 	color: #404080;   /* See comment in header formerly: #ac0404; (brown) */
 }
