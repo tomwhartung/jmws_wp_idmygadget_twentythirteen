@@ -50,13 +50,19 @@ a:hover,
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
-	background-color: #bfffbf;
+	background-color: #bfffff;
 }
 .archive-header {
 	background-color: #ffffff;   /* decided I did not want a background color on this elt */
 }
 .error404 .page-title:before {
-	color: #bfffbf;   /* See comment in header; formerly #e8e5ce; (grey) */
+	color: #bfffff;   /* See comment in header; formerly #e8e5ce; (grey) */
+}
+/*
+ * Overriding the colors used in the sidebar (widget area)
+ */
+.widget {
+	background-color: #bfffff;   /* See comment in header */
 }
 /*
  * Overriding the colors used in the main navigation menu
