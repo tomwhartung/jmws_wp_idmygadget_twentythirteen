@@ -21,7 +21,7 @@
  * ==> If you change the header image, you may want to change the colors accordingly
  *
  * Specific colors used on tablets:
- * #bfffbf ????????????????????????
+ * #eeeeee (light gray) used for backgrounds on the main nav and sidebar
  * #0000EE (blue) is the default standard color for links;
  *    Reference: http://stackoverflow.com/questions/4774022/whats-default-html-css-link-color
  *
@@ -43,40 +43,39 @@ a:hover,
 .paging-navigation a:hover .meta-nav {
 	background: #404080;   /* See comment in header formerly: #ea9629; (dark yellow) */
 }
-
 .attachment .hentry,
 .paging-navigation,
 /* .archive-header,  // decided I hate this; see override immediately below */
 .page-header,
 .error404 .page-wrapper,
 .site-footer {
-	background-color: #bfffff;
+	background-color: #eeeeee;
 }
 .archive-header {
 	background-color: #ffffff;   /* decided I did not want a background color on this elt */
 }
 .error404 .page-title:before {
-	color: #bfffff;   /* See comment in header; formerly #e8e5ce; (grey) */
+	color: #eeeeee;   /* See comment in header; formerly #e8e5ce; (grey) */
 }
 /*
  * Overriding the colors used in the sidebar (widget area)
  */
 .widget {
-	background-color: #bfffff;   /* See comment in header */
+	background-color: #eeeeee;   /* See comment in header */
 }
 /*
  * Overriding the colors used in the main navigation menu
   */
 .nav-menu .sub-menu,
 .nav-menu .children {
-	border-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
+	border-color: #eeeeee; /* formerly #f7f5e7; - essentially grey, */
 }
 .navbar,
 .format-aside,
 .format-link,
 .comment-respond,
 .no-comments {
-	background-color: #bfffff; /* formerly #f7f5e7; - essentially grey, */
+	background-color: #eeeeee; /* formerly #f7f5e7; - essentially grey, */
 }
 .format-quote .entry-content,
 .format-quote .entry-meta,
