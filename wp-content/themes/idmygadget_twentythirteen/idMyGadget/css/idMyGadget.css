@@ -2,6 +2,16 @@
  * Styles for use by idMyGadget code
  */
 /*
+ * For all devices, used in posts
+ */
+td.idmygadget-post {
+	line-height: 125%;
+	padding: 0.25em;
+}
+th.idmygadget-post {
+	margin-right: 1em;
+}
+/*
  * For all devices
  */
 .hamburger-icons-name-title-phone,
