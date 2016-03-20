@@ -11,6 +11,13 @@ td.idmygadget-post {
 th.idmygadget-post {
 	margin-right: 1em;
 }
+span.idmygadget-emphasis {
+	font-weight: bold;
+}
+span.idmygadget-score {
+	font-size: 110%;
+	font-weight: bold;
+}
 /*
  * For all devices
  */
