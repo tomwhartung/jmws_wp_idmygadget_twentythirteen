@@ -1,6 +1,15 @@
 /*
  * Styles for use by idMyGadget code - on phones only
- *
+ */
+/*
+ * Do not want to waste real estate on nice margins when on phones
+ */
+dl, ol, ul {
+	margin-left: 0em;
+	margin-right: 0em;
+}
+
+/*
  * Overriding the colors used for text and anchor tags (links) in ../../style.css
  *   so we can have a slightly different look on different device types
  *
