@@ -16,10 +16,10 @@ th.idmygadget-post {
 	margin-right: 1em;
 	text-align: center;
 }
-span.idmygadget-emphasis {
+.idmygadget-emphasis {
 	font-weight: bold;
 }
-span.idmygadget-score {
+.idmygadget-score {
 	font-size: 110%;
 	font-weight: bold;
 }
