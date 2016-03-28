@@ -2,11 +2,15 @@
  * Styles for use by idMyGadget code - on phones only
  */
 /*
- * Do not want to waste real estate on nice margins when on phones
+ * Do not want to waste real estate on margins (empty space) when on phones
  */
 dl, ol, ul {
 	margin-left: 0em;
 	margin-right: 0em;
+}
+
+footer.ui-footer {
+	border-width: 0px;  /* remove (top) border above the footer nav on phones */
 }
 
 /*
