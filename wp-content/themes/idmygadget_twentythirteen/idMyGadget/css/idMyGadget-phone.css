@@ -9,6 +9,10 @@ dl, ol, ul {
 	margin-right: 0em;
 }
 
+ol, ul {
+	padding-left: 1.0em;  /* align list elts with content, rather than leave them indented */
+}
+
 footer.ui-footer {
 	border-width: 0px;  /* remove (top) border above the footer nav on phones */
 }
