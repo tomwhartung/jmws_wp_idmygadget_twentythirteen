@@ -46,6 +46,11 @@ th.idmygadget-post {
 .site-description-desktop {
 	text-align: center;
 }
+#idmg-hamburger-menu-left,
+#idmg-hamburger-menu-right {
+	margin: 1em 2em;
+	padding: 1em 2em;
+}
 img#hamburger-icon-image-left,
 canvas#hamburger-icon-canvas-left {
 	display: inline;
