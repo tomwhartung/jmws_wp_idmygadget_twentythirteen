@@ -2,6 +2,18 @@
  * Styles for use by idMyGadget code - on phones only
  */
 /*
+ * Something on the phones (both iphone and android) makes my h1 and h3 elements about the same size
+ * (They do not look this way when I test in the browser and override the device type.)
+ * Something is a bit whacky here, uncomment this h1 rule and you'll see what I mean.
+ *	h1 {
+ *		font-size: 100%;
+ *	}
+ */
+h3 {
+	font-size: 90%;
+}
+
+/*
  * Do not want to waste real estate on margins (empty space) when on phones
  */
 dl, ol, ul {
