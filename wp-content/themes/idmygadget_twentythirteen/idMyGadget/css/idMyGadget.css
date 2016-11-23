@@ -19,7 +19,7 @@ th.idmygadget-post {
 .idmygadget-emphasis {
 	font-weight: bold;
 }
-.idmygadget-score {
+.idmygadget-score {  /* I.e. final grade (score) in moocs taken */
 	font-size: 110%;
 	font-weight: bold;
 }
