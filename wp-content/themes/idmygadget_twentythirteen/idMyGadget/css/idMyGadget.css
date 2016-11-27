@@ -92,8 +92,9 @@ img.logo-file-phone {
  * Styles used for tablets
  */
 img.logo-file-tablet {
-	display: block;
-	width: 100%;
+	display: inline;
+	margin: .5em 1.5em .5em 2em;
+	width: 210px;   /* 210px = actual size of image we are using */
 }
 .site-name-tablet {
 	margin: 0.2em 0.5em 0em 0.2em;
