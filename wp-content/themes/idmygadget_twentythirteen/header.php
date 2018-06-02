@@ -32,6 +32,7 @@ global $jmwsIdMyGadgetTwentyThirteenHelper;
 $site_title_or_name = $jmwsIdMyGadget->getSiteTitleOrName();
 ?>
 <head>
+	<?php include_once("google_analytics.php"); ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<title><?php echo $site_title_or_name; ?></title>
@@ -44,7 +45,6 @@ $site_title_or_name = $jmwsIdMyGadget->getSiteTitleOrName();
 </head>
 
 <body <?php body_class(); ?>>
-	<?php include_once("google_analytics.php"); ?>
 	<div id="page" class="hfeed site" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>
 		  data-title="<?php echo $site_title_or_name; ?>">
 		<header id="masthead" class="site-header" role="banner"
